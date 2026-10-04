@@ -1095,15 +1095,19 @@ async function startServer() {
     console.log('⚡ Active Database: Local Embedded NoSQL Document Engine (./data/)');
   }
 
-  app.listen(PORT, () => {
-    console.log(`\n======================================================`);
-    console.log(`  🚀 NSK APPAREL Server Running!`);
-    console.log(`  🌐 Storefront:  http://localhost:${PORT}`);
-    console.log(`  📦 Admin Panel: http://localhost:${PORT}/admin`);
-    console.log(`  🗄️  Database:    ${dbMode}`);
-    console.log(`  👑 Admin Email: ${process.env.ADMIN_EMAIL}`);
-    console.log(`======================================================\n`);
-  });
+  if (!process.env.VERCEL) {
+    app.listen(PORT, () => {
+      console.log(`\n======================================================`);
+      console.log(`  🚀 NSK APPAREL Server Running!`);
+      console.log(`  🌐 Storefront:  http://localhost:${PORT}`);
+      console.log(`  📦 Admin Panel: http://localhost:${PORT}/admin`);
+      console.log(`  🗄️  Database:    ${dbMode}`);
+      console.log(`  👑 Admin Email: ${process.env.ADMIN_EMAIL}`);
+      console.log(`======================================================\n`);
+    });
+  }
 }
 
 startServer();
+
+module.exports = app;
