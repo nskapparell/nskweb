@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NSK APPAREL — Premium Streetwear &amp; Fashion</title>
+  <meta name="description" content="Discover NSK APPAREL's premium collection of streetwear, oversized T-shirts, hoodies, caps and accessories. Urban luxury, defined." />
+  <meta property="og:title" content="NSK APPAREL — Premium Streetwear" />
+  <meta property="og:description" content="Urban luxury streetwear brand. Shop T-shirts, hoodies, caps and more." />
+  <meta property="og:image" content="assets/images/hero_banner.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpeg" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════ -->
+<!--  TOP ANNOUNCEMENT BAR                -->
+<!-- ══════════════════════════════════════ -->
+<div class="top-bar" id="topBar">
+  🚀 Free Shipping on orders above <span>₹999</span> &nbsp;|&nbsp; Use Code <span>NSK15</span> for 15% OFF your first order
+  <span class="top-bar-close" id="topBarClose">&times;</span>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!--  HEADER                              -->
+<!-- ══════════════════════════════════════ -->
+<header id="mainHeader">
+  <div class="container header-inner">
+    <!-- Logo -->
+    <a href="index.html" class="logo" id="logoLink">
+      <img src="assets/images/logo.jpeg" alt="NSK APPAREL Logo" />
+      <span class="logo-text">NSK APPAREL</span>
+    </a>
+
+    <!-- Main Nav -->
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#" class="active" id="navHome">Home</a>
+      <a href="#products" id="navMen">Men's</a>
+      <a href="#new-arrivals" id="navNew">New Arrivals</a>
+      <a href="#categories" id="navCat">Categories</a>
+      <a href="#" id="navSale" style="color:#e53935;font-weight:700;">Sale</a>
+      <a href="#" id="navAbout">About</a>
+    </nav>
+
+    <!-- Search -->
+    <div class="header-search" id="headerSearch">
+      <i class="fas fa-search search-icon" style="font-size:14px;"></i>
+      <input type="text" id="searchInput" placeholder="Search tees, hoodies, caps..." autocomplete="off" aria-label="Search products" />
+      <div class="search-dropdown" id="searchDropdown"></div>
+    </div>
+
+    <!-- Actions -->
+    <div class="header-actions">
+      <a href="#" class="header-btn" id="wishlistBtn" title="Wishlist" aria-label="Wishlist">
+        <i class="far fa-heart"></i>
+        <span class="wishlist-count" id="wishlistCount">0</span>
+      </a>
+      <a href="#" class="header-btn" id="cartBtn" title="Cart" aria-label="Cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <!-- User Auth Button -->
+      <button class="header-btn" id="userAuthBtn" title="My Account" aria-label="My Account" onclick="handleAuthBtnClick()">
+        <i class="far fa-user" id="userAuthIcon"></i>
+      </button>
+      <button class="header-btn btn-hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════ -->
+<!--  MOBILE MENU                         -->
+<!-- ══════════════════════════════════════ -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo.jpeg" alt="NSK APPAREL" style="height:40px;" />
+      <span class="logo-text" style="font-size:16px;">NSK APPAREL</span>
+    </a>
+    <button class="header-btn" id="mobileMenuClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="#" class="active"><i class="fas fa-home fa-fw"></i> Home</a>
+    <a href="#products"><i class="fas fa-tshirt fa-fw"></i> Men's Collection</a>
+    <a href="#new-arrivals"><i class="fas fa-star fa-fw"></i> New Arrivals</a>
+    <a href="#categories"><i class="fas fa-th-large fa-fw"></i> Categories</a>
+    <a href="#" style="color:#e53935;"><i class="fas fa-tag fa-fw"></i> Sale</a>
+    <a href="#"><i class="fas fa-heart fa-fw"></i> Wishlist</a>
+    <a href="#"><i class="fas fa-shopping-bag fa-fw"></i> Cart</a>
+    <a href="#"><i class="fas fa-info-circle fa-fw"></i> About Us</a>
+    <a href="#"><i class="fas fa-phone fa-fw"></i> Contact</a>
+  </nav>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!--  MARQUEE TICKER                      -->
+<!-- ══════════════════════════════════════ -->
+<section class="marquee-section" aria-label="Announcements">
+  <div class="marquee-track" id="marqueeTrack">
+    <!-- Items duplicated for infinite scroll -->
+    <div class="marquee-item"><span class="dot"></span>FREE SHIPPING OVER ₹999</div>
+    <div class="marquee-item"><span class="dot"></span>PREMIUM QUALITY FABRIC</div>
+    <div class="marquee-item"><span class="dot"></span>NEW COLLECTION ARRIVED</div>
+    <div class="marquee-item"><span class="dot"></span>15% OFF FIRST ORDER — CODE: NSK15</div>
+    <div class="marquee-item"><span class="dot"></span>100% COTTON STREETWEAR</div>
+    <div class="marquee-item"><span class="dot"></span>FAST DELIVERY PAN INDIA</div>
+    <div class="marquee-item"><span class="dot"></span>EASY 7-DAY RETURNS</div>
+    <div class="marquee-item"><span class="dot"></span>NSK APPAREL — EST. 2024</div>
+    <!-- Duplicate for seamless loop -->
+    <div class="marquee-item"><span class="dot"></span>FREE SHIPPING OVER ₹999</div>
+    <div class="marquee-item"><span class="dot"></span>PREMIUM QUALITY FABRIC</div>
+    <div class="marquee-item"><span class="dot"></span>NEW COLLECTION ARRIVED</div>
+    <div class="marquee-item"><span class="dot"></span>15% OFF FIRST ORDER — CODE: NSK15</div>
+    <div class="marquee-item"><span class="dot"></span>100% COTTON STREETWEAR</div>
+    <div class="marquee-item"><span class="dot"></span>FAST DELIVERY PAN INDIA</div>
+    <div class="marquee-item"><span class="dot"></span>EASY 7-DAY RETURNS</div>
+    <div class="marquee-item"><span class="dot"></span>NSK APPAREL — EST. 2024</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!--  HERO                                -->
+<!-- ══════════════════════════════════════ -->
+<section class="hero" id="hero" aria-label="Hero banner">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span>New Season — SS 2024</span>
+      </div>
+      <h1 class="hero-title">
+        Define Your<br/>
+        <em>Urban</em> Legacy.
+      </h1>
+      <p class="hero-subtitle">Premium Streetwear Collection</p>
+      <p class="hero-desc">
+        Crafted for the bold. Worn by the authentic. NSK APPAREL brings premium-grade streetwear that merges uncompromising quality with cutting-edge urban design.
+      </p>
+      <div class="hero-btns">
+        <a href="#products" class="btn btn-primary">
+          <i class="fas fa-shopping-bag"></i> Shop Now
+        </a>
+        <a href="#new-arrivals" class="btn btn-outline-white">
+          <i class="fas fa-play"></i> New Arrivals
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Stats -->
+  <div class="hero-stats">
+    <div class="container">
+      <div class="hero-stats-inner">
+        <div class="hero-stat" style="--i:0">
+          <div class="hero-stat-num">10K+</div>
+          <div class="hero-stat-label">Happy Customers</div>
+        </div>
+        <div class="hero-stat" style="--i:1">
+          <div class="hero-stat-num">150+</div>
+          <div class="hero-stat-label">Premium Products</div>
+        </div>
+        <div class="hero-stat" style="--i:2">
+          <div class="hero-stat-num">4.9★</div>
+          <div class="hero-stat-label">Average Rating</div>
+        </div>
+        <div class="hero-stat" style="--i:3">
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">Premium Cotton</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!--  CATEGORIES                          -->
+<!-- ══════════════════════════════════════ -->
+<section class="categories" id="categories">
+  <div class="container">
+    <div class="section-heading centered reveal">
+      <div class="section-eyebrow"><div class="eyebrow-line"></div><span>Shop By Category</span></div>
+      <h2 class="section-title">Find Your Style</h2>
+      <p class="section-desc">From oversized tees to premium hoodies — we've got every urban look covered.</p>
+    </div>
+    <div class="categories-grid">
+      <!-- Tees -->
+      <div class="cat-card cat-tees reveal" data-category="tees" id="catTees" role="button" tabindex="0">
+        <div class="cat-card-bg" style="background-image:url('assets/images/tshirt_navy.jpg');"></div>
+        <div class="cat-card-arrow"><i class="fas fa-arrow-right"></i></div>
+        <div class="cat-card-content">
+          <div class="cat-card-label">Collection</div>
+          <div class="cat-card-title">Graphic Tees</div>
+          <div class="cat-card-count">42 Products</div>
+        </div>
+      </div>
+      <!-- Hoodies -->
+      <div class="cat-card cat-hoodies reveal reveal-delay-1" data-category="hoodies" id="catHoodies" role="button" tabindex="0">
+        <div class="cat-card-bg" style="background-image:url('assets/images/hoodie_black.jpg');"></div>
+        <div class="cat-card-arrow"><i class="fas fa-arrow-right"></i></div>
+        <div class="cat-card-content">
+          <div class="cat-card-label">Bestseller</div>
+          <div class="cat-card-title">Hoodies &amp; Sweatshirts</div>
+          <div class="cat-card-count">28 Products</div>
+        </div>
+      </div>
+      <!-- Caps -->
+      <div class="cat-card cat-caps reveal reveal-delay-2" data-category="caps" id="catCaps" role="button" tabindex="0">
+        <div class="cat-card-bg" style="background-image:url('assets/images/cap_product.jpg');"></div>
+        <div class="cat-card-arrow"><i class="fas fa-arrow-right"></i></div>
+        <div class="cat-card-content">
+          <div class="cat-card-label">Accessories</div>
+          <div class="cat-card-title">Caps &amp; Hats</div>
+          <div class="cat-card-count">18 Products</div>
+        </div>
+      </div>
+      <!-- Bottoms -->
+      <div class="cat-card cat-bottoms reveal reveal-delay-3" data-category="bottoms" id="catBottoms" role="button" tabindex="0">
+        <div class="cat-card-bg" style="background-image:url('assets/images/jogger_black.jpg');"></div>
+        <div class="cat-card-arrow"><i class="fas fa-arrow-right"></i></div>
+        <div class="cat-card-content">
+          <div class="cat-card-label">New Drop</div>
+          <div class="cat-card-title">Joggers &amp; Bottoms</div>
+          <div class="cat-card-count">22 Products</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!--  FEATURED PRODUCTS                   -->
+<!-- ══════════════════════════════════════ -->
+<section class="products-section" id="products">
+  <div class="container">
+    <div class="products-header">
+      <div class="section-heading reveal" style="margin-bottom:0;">
+        <div class="section-eyebrow"><div class="eyebrow-line"></div><span>Our Products</span></div>
+        <h2 class="section-title">Featured Collection</h2>
+      </div>
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="tees">Tees</button>
+        <button class="filter-tab" data-filter="hoodies">Hoodies</button>
+        <button class="filter-tab" data-filter="caps">Caps</button>
+        <button class="filter-tab" data-filter="bottoms">Bottoms</button>
+      </div>
+    </div>
+
+    <div class="products-grid" id="productsGrid">
+
+      <!-- Product 1 -->
+      <div class="product-card reveal" data-category="tees" id="prod1">
+        <div class="product-img-wrap">
+          <img src="assets/images/tshirt_white.jpg" alt="NSK Classic Crest White Tee" loading="lazy" />
+          <div class="product-badges">
+            <span class="badge badge-new">New</span>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn wishlist-toggle" data-id="1" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+            <button class="product-action-btn quick-view-btn" data-id="1" aria-label="Quick view"><i class="far fa-eye"></i></button>
+          </div>
+          <button class="product-add-to-cart add-to-cart-btn" data-id="1" data-name="NSK Classic Crest Tee" data-price="849" data-img="assets/images/tshirt_white.jpg">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">NSK APPAREL</div>
+          <div class="product-name">Classic Crest White Tee</div>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="rating-count">(128)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">₹849</span>
+            <span class="price-original">₹1,299</span>
+            <span class="price-discount">35% OFF</span>
+          </div>
+          <div class="product-sizes">
+            <span class="size-chip">XS</span><span class="size-chip">S</span><span class="size-chip selected">M</span><span class="size-chip">L</span><span class="size-chip">XL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card reveal reveal-delay-1" data-category="tees" id="prod2">
+        <div class="product-img-wrap">
+          <img src="assets/images/tshirt_black.jpg" alt="NSK Urban Drop Oversized Black Tee" loading="lazy" />
+          <div class="product-badges">
+            <span class="badge badge-hot">Hot</span>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn wishlist-toggle" data-id="2" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+            <button class="product-action-btn quick-view-btn" data-id="2" aria-label="Quick view"><i class="far fa-eye"></i></button>
+          </div>
+          <button class="product-add-to-cart add-to-cart-btn" data-id="2" data-name="Urban Drop Oversized Black Tee" data-price="999" data-img="assets/images/tshirt_black.jpg">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">NSK APPAREL</div>
+          <div class="product-name">Urban Drop Oversized Black Tee</div>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <span class="rating-count">(256)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">₹999</span>
+            <span class="price-original">₹1,499</span>
+            <span class="price-discount">33% OFF</span>
+          </div>
+          <div class="product-sizes">
+            <span class="size-chip">S</span><span class="size-chip selected">M</span><span class="size-chip">L</span><span class="size-chip">XL</span><span class="size-chip">XXL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card reveal reveal-delay-2" data-category="tees" id="prod3">
+        <div class="product-img-wrap">
+          <img src="assets/images/tshirt_navy.jpg" alt="NSK Geometric Art Navy Oversized Tee" loading="lazy" />
+          <div class="product-badges">
+            <span class="badge badge-new">New</span>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn wishlist-toggle" data-id="3" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+            <button class="product-action-btn quick-view-btn" data-id="3" aria-label="Quick view"><i class="far fa-eye"></i></button>
+          </div>
+          <button class="product-add-to-cart add-to-cart-btn" data-id="3" data-name="Geometric Art Navy Tee" data-price="1,099" data-img="assets/images/tshirt_navy.jpg">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">NSK APPAREL</div>
+          <div class="product-name">Geometric Art Navy Oversized Tee</div>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+            </div>
+            <span class="rating-count">(89)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">₹1,099</span>
+            <span class="price-original">₹1,599</span>
+            <span class="price-discount">31% OFF</span>
+          </div>
+          <div class="product-sizes">
+            <span class="size-chip">XS</span><span class="size-chip">S</span><span class="size-chip">M</span><span class="size-chip selected">L</span><span class="size-chip">XL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card reveal reveal-delay-3" data-category="hoodies" id="prod4">
+        <div class="product-img-wrap">
+          <img src="assets/images/hoodie_black.jpg" alt="NSK Street Authority Pullover Hoodie" loading="lazy" />
+          <div class="product-badges">
+            <span class="badge badge-sale">Sale</span>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn wishlist-toggle" data-id="4" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+            <button class="product-action-btn quick-view-btn" data-id="4" aria-label="Quick view"><i class="far fa-eye"></i></button>
+          </div>
+          <button class="product-add-to-cart add-to-cart-btn" data-id="4" data-name="Street Authority Pullover Hoodie" data-price="1,799" data-img="assets/images/hoodie_black.jpg">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">NSK APPAREL</div>
+          <div class="product-name">Street Authority Pullover Hoodie</div>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <span class="rating-count">(312)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">₹1,799</span>
+            <span class="price-original">₹2,999</span>
+            <span class="price-discount">40% OFF</span>
+          </div>
+          <div class="product-sizes">
+            <span class="size-chip">S</span><span class="size-chip selected">M</span><span class="size-chip">L</span><span class="size-chip">XL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card reveal" data-category="caps" id="prod5">
+        <div class="product-img-wrap">
+          <img src="assets/images/cap_product.jpg" alt="NSK Urban Snapback Cap" loading="lazy" />
+          <div class="product-badges">
+            <span class="badge badge-new">New</span>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn wishlist-toggle" data-id="5" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+            <button class="product-action-btn quick-view-btn" data-id="5" aria-label="Quick view"><i class="far fa-eye"></i></button>
+          </div>
+          <button class="product-add-to-cart add-to-cart-btn" data-id="5" data-name="Urban Snapback Cap" data-price="699" data-img="assets/images/cap_product.jpg">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">NSK APPAREL</div>
+          <div class="product-name">Urban Snapback Cap — Black</div>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="rating-count">(74)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">₹699</span>
+            <span class="price-original">₹999</span>
+            <span class="price-discount">30% OFF</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card reveal reveal-delay-1" data-category="tees" id="prod6">
+        <div class="product-img-wrap">
+          <img src="assets/images/tshirt_grey.jpg" alt="NSK Acid Wash Vintage Grey Tee" loading="lazy" />
+          <div class="product-badges">
+            <span class="badge badge-hot">Hot</span>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn wishlist-toggle" data-id="6" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+            <button class="product-action-btn quick-view-btn" data-id="6" aria-label="Quick view"><i class="far fa-eye"></i></button>
+          </div>
+          <button class="product-add-to-cart add-to-cart-btn" data-id="6" data-name="Acid Wash Vintage Grey Tee" data-price="1,199" data-img="assets/images/tshirt_grey.jpg">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">NSK APPAREL</div>
+          <div class="product-name">Acid Wash Vintage Grey Tee</div>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+            </div>
+            <span class="rating-count">(143)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">₹1,199</span>
+            <span class="price-original">₹1,799</span>
+            <span class="price-discount">33% OFF</span>
+          </div>
+          <div class="product-sizes">
+            <span class="size-chip">XS</span><span class="size-chip">S</span><span class="size-chip">M</span><span class="size-chip">L</span><span class="size-chip selected">XL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="product-card reveal reveal-delay-2" data-category="bottoms" id="prod7">
+        <div class="product-img-wrap">
+          <img src="assets/images/jogger_black.jpg" alt="NSK Premium Fleece Jogger" loading="lazy" />
+          <div class="product-badges">
+            <span class="badge badge-new">New</span>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn wishlist-toggle" data-id="7" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+            <button class="product-action-btn quick-view-btn" data-id="7" aria-label="Quick view"><i class="far fa-eye"></i></button>
+          </div>
+          <button class="product-add-to-cart add-to-cart-btn" data-id="7" data-name="Premium Fleece Jogger" data-price="1,499" data-img="assets/images/jogger_black.jpg">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">NSK APPAREL</div>
+          <div class="product-name">Premium Fleece Jogger — Black</div>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <span class="rating-count">(198)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">₹1,499</span>
+            <span class="price-original">₹2,199</span>
+            <span class="price-discount">32% OFF</span>
+          </div>
+          <div class="product-sizes">
+            <span class="size-chip">XS</span><span class="size-chip selected">S</span><span class="size-chip">M</span><span class="size-chip">L</span><span class="size-chip">XL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="product-card reveal reveal-delay-3" data-category="tees" id="prod8">
+        <div class="product-img-wrap">
+          <img src="assets/images/tshirt_white.jpg" alt="NSK Signature Drop White Tee" loading="lazy" />
+          <div class="product-badges">
+            <span class="badge badge-sale">Sale</span>
+          </div>
+          <div class="product-actions">
+            <button class="product-action-btn wishlist-toggle" data-id="8" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+            <button class="product-action-btn quick-view-btn" data-id="8" aria-label="Quick view"><i class="far fa-eye"></i></button>
+          </div>
+          <button class="product-add-to-cart add-to-cart-btn" data-id="8" data-name="Signature Drop White Tee" data-price="749" data-img="assets/images/tshirt_white.jpg">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">NSK APPAREL</div>
+          <div class="product-name">Signature Drop White Tee</div>
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="rating-count">(67)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">₹749</span>
+            <span class="price-original">₹1,199</span>
+            <span class="price-discount">38% OFF</span>
+          </div>
+          <div class="product-sizes">
+            <span class="size-chip">S</span><span class="size-chip">M</span><span class="size-chip selected">L</span><span class="size-chip">XL</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /products-grid -->
+
+    <div style="text-align:center;margin-top:48px;" class="reveal">
+      <a href="#" class="btn btn-outline-navy" id="loadMoreBtn">
+        <i class="fas fa-th"></i> View All Products
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!--  COLLECTION BANNER                   -->
+<!-- ══════════════════════════════════════ -->
+<section class="collection-banner" id="collectionBanner" aria-label="Collection banner">
+  <div class="collection-banner-bg"></div>
+  <div class="collection-banner-overlay"></div>
+  <div class="container">
+    <div class="collection-banner-content reveal">
+      <div class="section-eyebrow"><div class="eyebrow-line"></div><span>Limited Edition</span></div>
+      <h2 class="section-title" style="color:#fff;">The Streets<br/>Await You.</h2>
+      <p class="collection-banner-desc">
+        Our signature collection blends raw urban energy with premium craftsmanship. Every piece is made to make a statement.
+      </p>
+      <div class="hero-btns">
+        <a href="#new-arrivals" class="btn btn-primary">
+          <i class="fas fa-fire"></i> Shop Collection
+        </a>
+        <a href="#" class="btn btn-outline-white">
+          <i class="fas fa-play-circle"></i> Watch Story
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!--  NEW ARRIVALS                        -->
+<!-- ══════════════════════════════════════ -->
+<section class="new-arrivals" id="new-arrivals">
+  <div class="container">
+    <div class="section-heading centered reveal">
+      <div class="section-eyebrow"><div class="eyebrow-line"></div><span>Just Dropped</span></div>
+      <h2 class="section-title">New Arrivals</h2>
+      <p class="section-desc">Fresh off the press — be the first to own the latest NSK drops.</p>
+    </div>
+    <div class="products-grid" style="grid-template-columns:repeat(3,1fr);">
+
+      <!-- New Product 1 -->
+      <div class="product-card reveal" id="newProd1">
+        <div class="product-img-wrap">
+          <img src="assets/images/tshirt_navy.jpg" alt="NSK Midnight Navy Drop Tee" loading="lazy" />
+          <div class="product-badges"><span class="badge badge-new">Just In</span></div>
+          <div class="product-actions">
+            <button class="product-action-btn wishlist-toggle" data-id="9" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+            <button class="product-action-btn quick-view-btn" data-id="9" aria-label="Quick view"><i class="far fa-eye"></i></button>
+          </div>
+          <button class="product-add-to-cart add-to-cart-btn" data-id="9" data-name="Midnight Navy Drop Tee" data-price="1,249" data-img="assets/images/tshirt_navy.jpg">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">NSK APPAREL</div>
+          <div class="product-name">Midnight Navy Drop Tee</div>
+          <div class="product-rating">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <span class="rating-count">(New)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">₹1,249</span>
+          </div>
+          <div class="product-sizes">
+            <span class="size-chip">S</span><span class="size-chip">M</span><span class="size-chip selected">L</span><span class="size-chip">XL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- New Product 2 -->
+      <div class="product-card reveal reveal-delay-1" id="newProd2">
+        <div class="product-img-wrap">
+          <img src="assets/images/hoodie_black.jpg" alt="NSK Collegiate Hoodie" loading="lazy" />
+          <div class="product-badges"><span class="badge badge-new">Just In</span></div>
+          <div class="product-actions">
+            <button class="product-action-btn wishlist-toggle" data-id="10" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+            <button class="product-action-btn quick-view-btn" data-id="10" aria-label="Quick view"><i class="far fa-eye"></i></button>
+          </div>
+          <button class="product-add-to-cart add-to-cart-btn" data-id="10" data-name="Collegiate Hoodie" data-price="2,199" data-img="assets/images/hoodie_black.jpg">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">NSK APPAREL</div>
+          <div class="product-name">Collegiate Arch Hoodie — Black</div>
+          <div class="product-rating">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+            <span class="rating-count">(New)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">₹2,199</span>
+          </div>
+          <div class="product-sizes">
+            <span class="size-chip selected">S</span><span class="size-chip">M</span><span class="size-chip">L</span><span class="size-chip">XL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- New Product 3 -->
+      <div class="product-card reveal reveal-delay-2" id="newProd3">
+        <div class="product-img-wrap">
+          <img src="assets/images/tshirt_grey.jpg" alt="NSK Stone Wash Oversized Tee" loading="lazy" />
+          <div class="product-badges"><span class="badge badge-new">Just In</span></div>
+          <div class="product-actions">
+            <button class="product-action-btn wishlist-toggle" data-id="11" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+            <button class="product-action-btn quick-view-btn" data-id="11" aria-label="Quick view"><i class="far fa-eye"></i></button>
+          </div>
+          <button class="product-add-to-cart add-to-cart-btn" data-id="11" data-name="Stone Wash Oversized Tee" data-price="1,349" data-img="assets/images/tshirt_grey.jpg">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">NSK APPAREL</div>
+          <div class="product-name">Stone Wash Oversized Tee</div>
+          <div class="product-rating">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <span class="rating-count">(New)</span>
+          </div>
+          <div class="product-price">
+            <span class="price-current">₹1,349</span>
+          </div>
+          <div class="product-sizes">
+            <span class="size-chip">XS</span><span class="size-chip">S</span><span class="size-chip">M</span><span class="size-chip selected">L</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!--  FEATURES / WHY US                   -->
+<!-- ══════════════════════════════════════ -->
+<section class="features-section" id="whyUs">
+  <div class="container">
+    <div class="section-heading centered reveal" style="margin-bottom:0;">
+      <div class="section-eyebrow" style="justify-content:center;"><div class="eyebrow-line"></div><span style="color:var(--gold);">Why NSK APPAREL</span></div>
+      <h2 class="section-title" style="color:#fff;">Built for the Streets,<br/>Made to Last.</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-item reveal" style="--i:0">
+        <div class="feature-icon"><i class="fas fa-gem"></i></div>
+        <div class="feature-title">Premium Fabric</div>
+        <div class="feature-desc">100% ring-spun cotton, preshrunk, anti-shrink treated for lasting comfort and bold color retention.</div>
+      </div>
+      <div class="feature-item reveal reveal-delay-1" style="--i:1">
+        <div class="feature-icon"><i class="fas fa-truck"></i></div>
+        <div class="feature-title">Free Shipping</div>
+        <div class="feature-desc">Free pan-India shipping on all orders above ₹999. Express delivery available in major cities.</div>
+      </div>
+      <div class="feature-item reveal reveal-delay-2" style="--i:2">
+        <div class="feature-icon"><i class="fas fa-undo-alt"></i></div>
+        <div class="feature-title">Easy Returns</div>
+        <div class="feature-desc">7-day hassle-free return policy. No questions asked — your satisfaction is our priority.</div>
+      </div>
+      <div class="feature-item reveal reveal-delay-3" style="--i:3">
+        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="feature-title">Secure Payments</div>
+        <div class="feature-desc">All transactions secured with 256-bit encryption. UPI, Cards, Net Banking & COD accepted.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!--  TESTIMONIALS                        -->
+<!-- ══════════════════════════════════════ -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-heading centered reveal">
+      <div class="section-eyebrow"><div class="eyebrow-line"></div><span>Reviews</span></div>
+      <h2 class="section-title">What Our Customers Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"Absolutely love the quality! The oversized tee fits perfectly and the fabric is incredibly soft. NSK APPAREL is my go-to for streetwear now. Will definitely order more!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <div class="testimonial-name">Arjun Sharma</div>
+            <div class="testimonial-location">Mumbai, Maharashtra</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"Got the black hoodie and I'm obsessed! Delivery was super fast, packaging was premium. The print quality is unlike anything I've seen. Totally worth every rupee!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:#c9a84c;color:#0d1b2a;">P</div>
+          <div>
+            <div class="testimonial-name">Priya Nair</div>
+            <div class="testimonial-location">Bangalore, Karnataka</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+        <p class="testimonial-text">"Ordered 3 tees and all of them are perfect. The acid wash grey is my absolute favourite. Even after multiple washes the color holds. NSK is premium for real!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:#1a2f45;">R</div>
+          <div>
+            <div class="testimonial-name">Rohan Verma</div>
+            <div class="testimonial-location">Delhi, NCR</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!--  NEWSLETTER                          -->
+<!-- ══════════════════════════════════════ -->
+<section class="newsletter" id="newsletter">
+  <div class="container newsletter-content">
+    <div class="section-eyebrow" style="justify-content:center;margin-bottom:16px;">
+      <div class="eyebrow-line" style="background:var(--gold);"></div>
+      <span style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;">Stay Updated</span>
+    </div>
+    <h2 class="section-title" style="color:#fff;font-size:clamp(1.8rem,3.5vw,2.8rem);">Get Exclusive Drops &amp;<br/>Special Offers</h2>
+    <p class="newsletter-desc">Subscribe to the NSK APPAREL newsletter and be the first to know about new drops, flash sales, and members-only discounts.</p>
+    <form class="newsletter-form" id="newsletterForm" novalidate>
+      <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Enter your email address" required aria-label="Email address" />
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-paper-plane"></i> Subscribe
+      </button>
+    </form>
+    <p class="newsletter-note">No spam, ever. Unsubscribe at any time. 🔒</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!--  FOOTER                              -->
+<!-- ══════════════════════════════════════ -->
+<footer id="mainFooter">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.jpeg" alt="NSK APPAREL" style="height:44px;filter:brightness(0) invert(1);mix-blend-mode:screen;border-radius:4px;" />
+          <span class="logo-text">NSK APPAREL</span>
+        </a>
+        <p>Premium streetwear crafted for the bold. We merge authentic urban culture with superior quality to bring you clothing that makes a statement.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <!-- Shop -->
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul class="footer-links">
+          <li><a href="#">Men's Collection</a></li>
+          <li><a href="#">Graphic Tees</a></li>
+          <li><a href="#">Hoodies &amp; Sweatshirts</a></li>
+          <li><a href="#">Caps &amp; Accessories</a></li>
+          <li><a href="#">Joggers &amp; Bottoms</a></li>
+          <li><a href="#" style="color:var(--gold);">Sale Items 🔥</a></li>
+        </ul>
+      </div>
+      <!-- Help -->
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul class="footer-links">
+          <li><a href="#">Track My Order</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Returns &amp; Exchanges</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <!-- Company -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="#">About NSK APPAREL</a></li>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Affiliate Program</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div>© 2024 NSK APPAREL. All rights reserved.</div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="/admin" style="color:var(--gold);opacity:0.85;"><i class="fas fa-crown" style="font-size:11px;"></i> Admin Panel</a>
+      </div>
+      <div class="payment-icons">
+        <span class="payment-icon">UPI</span>
+        <span class="payment-icon">VISA</span>
+        <span class="payment-icon">MC</span>
+        <span class="payment-icon">COD</span>
+        <span class="payment-icon">EMI</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════ -->
+<!--  CART DRAWER                         -->
+<!-- ══════════════════════════════════════ -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" role="complementary" aria-label="Shopping cart">
+  <div class="cart-header">
+    <h3><i class="fas fa-shopping-bag" style="margin-right:8px;color:var(--gold);"></i> Your Cart (<span id="cartItemCount">0</span>)</h3>
+    <button class="cart-close" id="cartClose" aria-label="Close cart"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty" id="cartEmpty">
+      <i class="fas fa-shopping-bag"></i>
+      <p>Your cart is empty.<br/><a href="#products" style="color:var(--navy);font-weight:600;">Start shopping →</a></p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cartTotal">₹0</span>
+    </div>
+    <p class="cart-note">🚚 Free shipping on this order!</p>
+    <button onclick="openCheckout()" class="btn btn-primary" style="justify-content:center;height:52px;border-radius:999px;width:100%;display:flex;align-items:center;gap:8px;font-size:15px;margin-bottom:10px;border:none;cursor:pointer;">
+      <i class="fas fa-lock"></i> Proceed to Checkout
+    </button>
+    <button onclick="closeCart()" class="btn btn-outline-navy" style="justify-content:center;width:100%;display:flex;height:44px;border-radius:999px;border:none;cursor:pointer;">
+      Continue Shopping
+    </button>
+  </div>
+</aside>
+
+<!-- ══════════════════════════════════════ -->
+<!--  QUICK VIEW MODAL                    -->
+<!-- ══════════════════════════════════════ -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Product quick view">
+  <div class="quick-view-modal" id="quickViewModal">
+    <button class="modal-close" id="modalClose" aria-label="Close modal"><i class="fas fa-times"></i></button>
+    <div class="modal-inner" id="modalInner">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!--  TOAST + BACK TO TOP                 -->
+<!-- ══════════════════════════════════════ -->
+<div class="toast-container" id="toastContainer"></div>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- ══════════════════════════════════════ -->
+<!--  AUTH MODAL (Login / Register)       -->
+<!-- ══════════════════════════════════════ -->
+<div class="nsk-overlay" id="authOverlay" onclick="closeAuthModal(event)"></div>
+<div class="nsk-modal" id="authModal" role="dialog" aria-modal="true" aria-label="Login or Register">
+  <button class="nsk-modal-close" onclick="closeAuthModal()" aria-label="Close"><i class="fas fa-times"></i></button>
+
+  <!-- Tabs -->
+  <div class="auth-tabs">
+    <button class="auth-tab active" id="tabLogin"  onclick="switchAuthTab('login')">Login</button>
+    <button class="auth-tab"        id="tabRegister" onclick="switchAuthTab('register')">Register</button>
+  </div>
+
+  <!-- Login Form -->
+  <div id="authLoginForm">
+    <div class="auth-heading">Welcome Back 👋</div>
+    <p class="auth-sub">Login to place orders and track your purchases</p>
+    <div class="auth-field">
+      <label>Email Address</label>
+      <input type="email" id="loginEmail" class="auth-input" placeholder="you@example.com" autocomplete="email"/>
+    </div>
+    <div class="auth-field">
+      <label>Password</label>
+      <div class="auth-pass-wrapper">
+        <input type="password" id="loginPassword" class="auth-input" placeholder="Your password" autocomplete="current-password"/>
+        <button type="button" class="auth-pass-toggle" onclick="togglePassVisibility('loginPassword', 'loginPassIcon')" title="Show/Hide password" aria-label="Toggle password visibility">
+          <i class="fas fa-eye" id="loginPassIcon"></i>
+        </button>
+      </div>
+    </div>
+    <div class="auth-error" id="loginError"></div>
+    <button class="auth-submit" id="loginBtn" onclick="userLogin()"><i class="fas fa-sign-in-alt"></i> Login</button>
+    <p class="auth-switch">Don't have an account? <a href="#" onclick="switchAuthTab('register')">Register here</a></p>
+  </div>
+
+  <!-- Register Form -->
+  <div id="authRegisterForm" style="display:none;">
+    <div class="auth-heading">Create Account 🚀</div>
+    <p class="auth-sub">Join NSK APPAREL to shop premium streetwear</p>
+    <div class="auth-row">
+      <div class="auth-field">
+        <label>Full Name</label>
+        <input type="text" id="regName" class="auth-input" placeholder="e.g. Rahul Sharma" autocomplete="name"/>
+      </div>
+      <div class="auth-field">
+        <label>Phone Number</label>
+        <input type="tel" id="regPhone" class="auth-input" placeholder="e.g. 9840123456" autocomplete="tel"/>
+      </div>
+    </div>
+    <div class="auth-field">
+      <label>Email Address</label>
+      <input type="email" id="regEmail" class="auth-input" placeholder="e.g. rahul@gmail.com" autocomplete="email"/>
+    </div>
+    <div class="auth-field">
+      <label>Password</label>
+      <div class="auth-pass-wrapper">
+        <input type="password" id="regPassword" class="auth-input" placeholder="At least 6 characters" autocomplete="new-password"/>
+        <button type="button" class="auth-pass-toggle" onclick="togglePassVisibility('regPassword', 'regPassIcon')" title="Show/Hide password" aria-label="Toggle password visibility">
+          <i class="fas fa-eye" id="regPassIcon"></i>
+        </button>
+      </div>
+    </div>
+    <div class="auth-error" id="registerError"></div>
+    <button class="auth-submit" id="registerBtn" onclick="userRegister()"><i class="fas fa-user-plus"></i> Create Account</button>
+    <p class="auth-switch">Already have an account? <a href="#" onclick="switchAuthTab('login')">Login</a></p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!--  CHECKOUT MODAL                      -->
+<!-- ══════════════════════════════════════ -->
+<div class="nsk-overlay" id="checkoutOverlay" onclick="closeCheckoutModal(event)"></div>
+<div class="nsk-modal checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Checkout">
+  <button class="nsk-modal-close" onclick="closeCheckoutModal()" aria-label="Close"><i class="fas fa-times"></i></button>
+  <div class="auth-heading">Complete Your Order 🛍️</div>
+  <p class="auth-sub">Cash on Delivery — Pay when your order arrives</p>
+
+  <!-- Customer Contact Card -->
+  <div class="checkout-user-card" id="checkoutUserCard">
+    <div class="checkout-user-avatar" id="checkoutUserAvatar">👤</div>
+    <div class="checkout-user-details">
+      <div class="checkout-user-name" id="checkoutUserName">Customer Details</div>
+      <div class="checkout-user-contact" id="checkoutUserContact"></div>
+    </div>
+  </div>
+
+  <div class="checkout-section">
+    <h4 class="checkout-section-title"><i class="fas fa-map-marker-alt" style="color:var(--gold);"></i> Delivery Address</h4>
+
+    <!-- PIN Code with Instant Auto-Lookup -->
+    <div class="auth-field">
+      <label>Postal PIN Code * <span style="font-weight:normal;color:#6b7280;text-transform:none;font-size:11px;">(Auto-detects State & District)</span></label>
+      <input type="text" id="coPincode" class="auth-input" placeholder="Enter 6-digit Indian PIN (e.g. 626123)" maxlength="6" oninput="onPincodeInput(this.value)" autocomplete="postal-code"/>
+      <div id="coPincodeStatus" class="pincode-status"></div>
+    </div>
+
+    <!-- State & City Row -->
+    <div class="auth-row">
+      <div class="auth-field">
+        <label>State / UT *</label>
+        <select id="coState" class="auth-select" onchange="onStateChange(this.value)" autocomplete="address-level1">
+          <option value="">Select State</option>
+        </select>
+      </div>
+      <div class="auth-field">
+        <label>City / District *</label>
+        <select id="coCity" class="auth-select" autocomplete="address-level2">
+          <option value="">Select City / District</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Street Address -->
+    <div class="auth-field">
+      <label>Street Address * <span style="font-weight:normal;color:#6b7280;text-transform:none;font-size:11px;">(Door/Flat No., Building, Area)</span></label>
+      <input type="text" id="coAddress" class="auth-input" placeholder="e.g. Door No. 42, 3rd Cross Street, Mepco Nagar" autocomplete="street-address"/>
+    </div>
+
+    <!-- Landmark & Alternate Phone Row -->
+    <div class="auth-row">
+      <div class="auth-field">
+        <label>Landmark (Optional)</label>
+        <input type="text" id="coLandmark" class="auth-input" placeholder="e.g. Near Bus Stand / Opp. Temple"/>
+      </div>
+      <div class="auth-field">
+        <label>Alternate Delivery Phone (Optional)</label>
+        <input type="tel" id="coAltPhone" class="auth-input" placeholder="10-digit mobile" maxlength="10" autocomplete="tel"/>
+      </div>
+    </div>
+
+    <!-- Order Notes -->
+    <div class="auth-field">
+      <label>Order Notes (Optional)</label>
+      <textarea id="coNotes" class="auth-input" rows="2" placeholder="Any special delivery instructions..."></textarea>
+    </div>
+
+    <div class="delivery-estimate-badge">
+      <i class="fas fa-shipping-fast"></i>
+      <span>Express Shipping: <strong>Estimated delivery within 3 - 5 business days</strong></span>
+    </div>
+  </div>
+
+  <div class="checkout-section">
+    <h4 class="checkout-section-title"><i class="fas fa-shopping-bag" style="color:var(--gold);"></i> Order Summary</h4>
+    <div id="checkoutItemsList" style="margin-bottom:12px;"></div>
+    <div class="checkout-total">
+      <span>Total (COD)</span>
+      <strong id="checkoutTotal">₹0</strong>
+    </div>
+    <div class="cod-badge"><i class="fas fa-money-bill-wave"></i> Cash on Delivery Only</div>
+  </div>
+
+  <div class="auth-error" id="checkoutError"></div>
+  <button class="auth-submit" id="placeOrderBtn" onclick="placeOrder()">
+    <i class="fas fa-check-circle"></i> Place Order (COD)
+  </button>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!--  ORDER SUCCESS MODAL                 -->
+<!-- ══════════════════════════════════════ -->
+<div class="nsk-overlay" id="successOverlay"></div>
+<div class="nsk-modal success-modal" id="successModal" role="dialog" aria-modal="true">
+  <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+  <div class="auth-heading" style="text-align:center;">Order Placed! 🎉</div>
+  <p class="auth-sub" style="text-align:center;">Your order has been confirmed. You'll receive an email shortly.</p>
+  <div class="success-order-id" id="successOrderId"></div>
+  <div class="cod-badge" style="margin:16px 0;"><i class="fas fa-money-bill-wave"></i> Pay Cash on Delivery</div>
+  <button class="auth-submit" onclick="closeSuccessModal()">Continue Shopping</button>
+</div>
+
+<!-- User Dropdown -->
+<div class="user-dropdown" id="userDropdown">
+  <div class="user-dropdown-name" id="dropdownName">My Account</div>
+  <hr style="border-color:rgba(255,255,255,0.1);margin:8px 0;"/>
+  <a href="/admin" id="adminDropdownLink" class="user-dropdown-item" style="display:none;color:var(--gold);font-weight:700;"><i class="fas fa-crown"></i> Admin Panel</a>
+  <a href="#" onclick="showMyOrders()" class="user-dropdown-item"><i class="fas fa-box"></i> My Orders</a>
+  <a href="#" onclick="userLogout()" class="user-dropdown-item" style="color:#ef4444;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+</div>
+
+<!-- My Orders Modal -->
+<div class="nsk-overlay" id="ordersOverlay" onclick="closeOrdersModal(event)"></div>
+<div class="nsk-modal checkout-modal" id="ordersModal" role="dialog" aria-modal="true">
+  <button class="nsk-modal-close" onclick="closeOrdersModal()" aria-label="Close"><i class="fas fa-times"></i></button>
+  <div class="auth-heading">My Orders 📦</div>
+  <div id="myOrdersList"><div style="text-align:center;padding:30px;color:var(--muted);"><i class="fas fa-spinner fa-spin" style="font-size:24px;"></i></div></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

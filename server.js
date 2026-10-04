@@ -35,6 +35,7 @@ try {
 app.use(cors({ origin: '*', credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname)));  // serve frontend
 
 // ── Multer (file uploads for product images) ─────────────────
