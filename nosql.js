@@ -8,11 +8,34 @@
 
 const fs     = require('fs');
 const path   = require('path');
+const os     = require('os');
 const crypto = require('crypto');
 
-const dataDir = path.join(__dirname, 'data');
-if (!fs.existsSync(dataDir)) {
-  fs.mkdirSync(dataDir, { recursive: true });
+const isServerless = !!(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+let dataDir = path.join(__dirname, 'data');
+
+if (isServerless) {
+  try {
+    const tmpDataDir = path.join(os.tmpdir(), 'nsk_data');
+    if (!fs.existsSync(tmpDataDir)) fs.mkdirSync(tmpDataDir, { recursive: true });
+    // Copy bundled seed files to /tmp so they can be read and written
+    if (fs.existsSync(dataDir)) {
+      for (const file of fs.readdirSync(dataDir)) {
+        const src = path.join(dataDir, file);
+        const dst = path.join(tmpDataDir, file);
+        if (!fs.existsSync(dst) && fs.statSync(src).isFile()) {
+          fs.copyFileSync(src, dst);
+        }
+      }
+    }
+    dataDir = tmpDataDir;
+  } catch (err) {
+    console.warn('Serverless tmp dataDir warning:', err.message);
+  }
+} else {
+  try {
+    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+  } catch (_) {}
 }
 
 function generateId() {

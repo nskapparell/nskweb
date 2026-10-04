@@ -20,8 +20,16 @@ const app  = express();
 const PORT = process.env.PORT || 3000;
 
 // ── Ensure uploads folder exists ─────────────────────────────
-const uploadsDir = path.join(__dirname, 'assets', 'images', 'uploads');
-if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
+const isServerless = !!(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+const uploadsDir = isServerless
+  ? path.join(require('os').tmpdir(), 'uploads')
+  : path.join(__dirname, 'assets', 'images', 'uploads');
+
+try {
+  if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
+} catch (err) {
+  console.warn('Uploads directory warning:', err.message);
+}
 
 // ── Middleware ───────────────────────────────────────────────
 app.use(cors({ origin: '*', credentials: true }));
