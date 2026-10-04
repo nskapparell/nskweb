@@ -1,0 +1,193 @@
+[
+  {
+    "_id": "f0b4d2ee9e0eb9544d5f06ee",
+    "name": "Classic Crest White Tee",
+    "price": 849,
+    "originalPrice": 1299,
+    "category": "tees",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "image": "assets/images/tshirt_white.jpg",
+    "description": "Our iconic NSK Crest tee crafted from 100% premium ring-spun cotton. Oversized fit with drop-shoulder cut for that perfect streetwear silhouette.",
+    "badge": "Best Seller",
+    "inStock": true,
+    "featured": true,
+    "rating": 4.5,
+    "reviews": 128,
+    "createdAt": "2026-10-03T08:54:27.040Z"
+  },
+  {
+    "_id": "16eb22625450ab6f50032799",
+    "name": "Urban Drop Oversized Black Tee",
+    "price": 999,
+    "originalPrice": 1499,
+    "category": "tees",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "image": "assets/images/tshirt_black.jpg",
+    "description": "Bold typography meets premium quality. This oversized black tee is the cornerstone of urban style.",
+    "badge": "Popular",
+    "inStock": true,
+    "featured": true,
+    "rating": 5,
+    "reviews": 256,
+    "createdAt": "2026-10-03T08:54:27.051Z"
+  },
+  {
+    "_id": "37c6fe7ee822956e4d0aaed4",
+    "name": "Geometric Art Navy Oversized Tee",
+    "price": 1099,
+    "originalPrice": 1599,
+    "category": "tees",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "image": "assets/images/tshirt_navy.jpg",
+    "description": "Geometric graphic art on a rich navy base. Drop-shoulder construction, 220 GSM premium cotton.",
+    "badge": "",
+    "inStock": true,
+    "featured": false,
+    "rating": 4,
+    "reviews": 89,
+    "createdAt": "2026-10-03T08:54:27.052Z"
+  },
+  {
+    "_id": "9f9bc73331eb02cb262e37d3",
+    "name": "Street Authority Pullover Hoodie",
+    "price": 1799,
+    "originalPrice": 2499,
+    "category": "hoodies",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "image": "assets/images/hoodie_black.jpg",
+    "description": "Heavyweight 380 GSM fleece hoodie with kangaroo pocket. Brushed inner lining for ultimate comfort.",
+    "badge": "Hot Drop",
+    "inStock": true,
+    "featured": true,
+    "rating": 5,
+    "reviews": 312,
+    "createdAt": "2026-10-03T08:54:27.052Z"
+  },
+  {
+    "_id": "d8928695f07433190697141a",
+    "name": "Urban Snapback Cap",
+    "price": 699,
+    "originalPrice": 999,
+    "category": "caps",
+    "sizes": [
+      "Free Size"
+    ],
+    "image": "assets/images/cap_product.jpg",
+    "description": "Structured 6-panel snapback with embroidered logo. Adjustable snap closure, one size fits all.",
+    "badge": "",
+    "inStock": true,
+    "featured": false,
+    "rating": 4.5,
+    "reviews": 74,
+    "createdAt": "2026-10-03T08:54:27.053Z"
+  },
+  {
+    "_id": "9a8a732057817fc75def1dfd",
+    "name": "Acid Wash Vintage Grey Tee",
+    "price": 1199,
+    "originalPrice": 1699,
+    "category": "tees",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "image": "assets/images/tshirt_grey.jpg",
+    "description": "Premium acid wash treatment gives each piece a unique vintage character. No two tees are exactly alike.",
+    "badge": "Vintage",
+    "inStock": true,
+    "featured": false,
+    "rating": 4,
+    "reviews": 143,
+    "createdAt": "2026-10-03T08:54:27.054Z"
+  },
+  {
+    "_id": "d7ddfb7062a5fe340287db04",
+    "name": "Premium Fleece Jogger",
+    "price": 1499,
+    "originalPrice": 2199,
+    "category": "bottoms",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "image": "assets/images/jogger_black.jpg",
+    "description": "Tapered-fit fleece jogger with elastic waistband and ribbed cuffs. Pairs perfectly with any NSK tee.",
+    "badge": "Essential",
+    "inStock": true,
+    "featured": true,
+    "rating": 5,
+    "reviews": 198,
+    "createdAt": "2026-10-03T08:54:27.054Z"
+  },
+  {
+    "_id": "8eee2fb8cee7aa90d5ad9711",
+    "name": "Midnight Navy Drop Tee",
+    "price": 1249,
+    "originalPrice": 1799,
+    "category": "tees",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "image": "assets/images/tshirt_navy.jpg",
+    "description": "New arrival. Midnight navy colorway with architectural geometric print. Limited first drop.",
+    "badge": "New",
+    "inStock": true,
+    "featured": false,
+    "rating": 5,
+    "reviews": 12,
+    "createdAt": "2026-10-03T08:54:27.055Z"
+  },
+  {
+    "_id": "d30f2131eab465dd4864f396",
+    "name": "Collegiate Arch Hoodie",
+    "price": 2199,
+    "originalPrice": 2999,
+    "category": "hoodies",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "image": "assets/images/hoodie_black.jpg",
+    "description": "Collegiate-style arch typography on premium 400 GSM fleece. Heavyweight, structured hood.",
+    "badge": "Winter Special",
+    "inStock": true,
+    "featured": true,
+    "rating": 4.8,
+    "reviews": 45,
+    "createdAt": "2026-10-03T08:54:27.055Z"
+  }
+]

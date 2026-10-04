@@ -1,0 +1,67 @@
+[
+  {
+    "_id": "95024f7e2a9ed27d8361cf2d",
+    "name": "Sandy",
+    "email": "sandytalksofficial@gmail.com",
+    "phone": "6374511856",
+    "password": "$2b$12$owg8S3rlMwkn2sUafc4UB.SRyhUL8adrLfLlcjuc4ehfY9Cvvc0w2",
+    "createdAt": "2026-10-03T09:01:35.183Z"
+  },
+  {
+    "_id": "8ccc86cc14f1d4dd60614b18",
+    "name": "NSK Customer",
+    "email": "apparelnsk+customer@gmail.com",
+    "phone": "9876543210",
+    "password": "$2b$12$VldDHSxtHRbe9GMaPU5V2.lACb0Pc4AgRKEYlCgE8bHnak7nigp.m",
+    "createdAt": "2026-10-03T09:17:27.901Z"
+  },
+  {
+    "_id": "71df6fef4181535d4cdafbdb",
+    "name": "Priya",
+    "email": "apparelnsk+priya@gmail.com",
+    "phone": "9840123456",
+    "password": "$2b$12$GonxOAVMyWv2ZH.CSPC80.nN2tjKgGntp8m0SZIkFzUAKgZsoztAS",
+    "createdAt": "2026-10-03T09:19:08.371Z"
+  },
+  {
+    "_id": "c5841419511e48d90d57ba5e",
+    "name": "Karthik Raja",
+    "email": "apparelnsk+karthik@gmail.com",
+    "phone": "9840123456",
+    "password": "$2b$12$Fl7IjYt2AzZmxUAWnKER/OTGXyzLCnDizET5tfqYuFSCxlRgV1r4e",
+    "createdAt": "2026-10-03T09:31:47.432Z"
+  },
+  {
+    "_id": "24759043290c51a692913e99",
+    "name": "Sivakasi Tester",
+    "email": "mepco.tester1791020337202@gmail.com",
+    "phone": "9840123456",
+    "password": "$2b$12$nluOnXtCEA3mTQgtlEDHRur84uR4qt9i4CuYNgruaAokaAs/RmD6O",
+    "createdAt": "2026-10-03T09:38:57.664Z"
+  },
+  {
+    "_id": "1d6d9150867accc82c995491",
+    "name": "Sivakasi Shopper",
+    "email": "sivakasi.user1791020545454@gmail.com",
+    "phone": "9840123456",
+    "password": "$2b$12$D32FVrhau.pGzS2DdQdJFea0qfv.zgr0kKqe9Fh94mpN1jso7IlL.",
+    "createdAt": "2026-10-03T09:42:25.789Z",
+    "status": "Active"
+  },
+  {
+    "_id": "ff87d42a91691fe0083e53cd",
+    "name": "Shopper Test",
+    "email": "shopper_1791122378994@example.com",
+    "phone": "9876543210",
+    "password": "$2b$12$9rXalWrg1t5eR0AsVV89QuKt29Swh60fK9TYIOjBaZ4S8/4.24qge",
+    "createdAt": "2026-10-04T13:59:40.286Z"
+  },
+  {
+    "_id": "2e6111efc65d1fdabbb1674d",
+    "name": "Shopper Test",
+    "email": "shopper_1791122526163@example.com",
+    "phone": "9876543210",
+    "password": "$2b$12$7f3exWZMLaSnRNzw4LsJbOHqbx6CNUaJ4u5z968YLRwV2JDhSNIXO",
+    "createdAt": "2026-10-04T14:02:07.147Z"
+  }
+]

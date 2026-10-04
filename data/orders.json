@@ -1,0 +1,205 @@
+[
+  {
+    "_id": "153dface3259bd3defaf73fd",
+    "orderId": "NSK18169925",
+    "user": "95024f7e2a9ed27d8361cf2d",
+    "userName": "Sandy",
+    "userEmail": "sandytalksofficial@gmail.com",
+    "userPhone": "6374511856",
+    "address": "Mepco Schlenk Engineering College",
+    "city": "Viruthunagar",
+    "state": "Tamil Nadu",
+    "pincode": "606802",
+    "items": [
+      {
+        "productId": "1",
+        "name": "NSK Classic Crest Tee",
+        "price": 849,
+        "size": "M",
+        "qty": 1,
+        "image": "assets/images/tshirt_white.jpg"
+      }
+    ],
+    "total": 849,
+    "payment": "COD",
+    "status": "Pending",
+    "notes": "",
+    "createdAt": "2026-10-03T09:02:49.926Z"
+  },
+  {
+    "_id": "a66d42c5970ef3d29e7f7e33",
+    "orderId": "NSK19047919",
+    "user": "8ccc86cc14f1d4dd60614b18",
+    "userName": "NSK Customer",
+    "userEmail": "apparelnsk+customer@gmail.com",
+    "userPhone": "9876543210",
+    "address": "77 Streetwear Blvd, Anna Nagar",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "pincode": "600040",
+    "items": [
+      {
+        "productId": "1",
+        "name": "Classic Crest White Tee",
+        "price": 849,
+        "size": "L",
+        "qty": 1,
+        "image": "assets/images/tshirt_white.jpg"
+      },
+      {
+        "productId": "5",
+        "name": "Urban Snapback Cap",
+        "price": 699,
+        "size": "Free Size",
+        "qty": 1,
+        "image": "assets/images/cap_product.jpg"
+      }
+    ],
+    "total": 1548,
+    "payment": "COD",
+    "status": "Pending",
+    "notes": "Testing Gmail order notification",
+    "createdAt": "2026-10-03T09:17:27.920Z"
+  },
+  {
+    "_id": "af1f1b19e21d7739c5a842d5",
+    "orderId": "NSK19148387",
+    "user": "71df6fef4181535d4cdafbdb",
+    "userName": "Priya",
+    "userEmail": "apparelnsk+priya@gmail.com",
+    "userPhone": "9840123456",
+    "address": "42 MG Road",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "pincode": "560001",
+    "items": [
+      {
+        "productId": "2",
+        "name": "Urban Drop Oversized Black Tee",
+        "price": 999,
+        "size": "M",
+        "qty": 1,
+        "image": "assets/images/tshirt_black.jpg"
+      }
+    ],
+    "total": 999,
+    "payment": "COD",
+    "status": "Pending",
+    "notes": "Please ring the doorbell twice",
+    "createdAt": "2026-10-03T09:19:08.387Z"
+  },
+  {
+    "_id": "6449498d0e080557279c0c78",
+    "orderId": "NSK19239745",
+    "user": "95024f7e2a9ed27d8361cf2d",
+    "userName": "Sandy",
+    "userEmail": "sandytalksofficial@gmail.com",
+    "userPhone": "6374511856",
+    "address": "Mepco College",
+    "city": "Sivakasi",
+    "state": "Tamil Nadu",
+    "pincode": "606802",
+    "items": [
+      {
+        "productId": "2",
+        "name": "Urban Drop Oversized Black Tee",
+        "price": 999,
+        "size": "M",
+        "qty": 1,
+        "image": "assets/images/tshirt_black.jpg"
+      }
+    ],
+    "total": 999,
+    "payment": "COD",
+    "status": "Pending",
+    "notes": "",
+    "createdAt": "2026-10-03T09:20:39.745Z"
+  },
+  {
+    "_id": "adc2e3879a3bf39f30c84092",
+    "orderId": "NSK22380375",
+    "user": "ff87d42a91691fe0083e53cd",
+    "userName": "Shopper Test",
+    "userEmail": "shopper_1791122378994@example.com",
+    "userPhone": "9876543210",
+    "address": "123 Fashion Street, Avenue 4",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "pincode": "600001",
+    "landmark": "Near Central Plaza",
+    "altPhone": "9123456780",
+    "items": [
+      {
+        "productId": "6adda7970806490d3a91f772",
+        "name": "E2E Full Stack Oversized Tee - Updated",
+        "price": 1399,
+        "size": "L",
+        "qty": 2,
+        "image": ""
+      }
+    ],
+    "total": 2798,
+    "payment": "COD",
+    "status": "Processing",
+    "notes": "Deliver afternoon please",
+    "createdAt": "2026-10-04T13:59:40.375Z"
+  },
+  {
+    "_id": "031aed2515ed9b177808c171",
+    "orderId": "NSK22527254",
+    "user": "2e6111efc65d1fdabbb1674d",
+    "userName": "Shopper Test",
+    "userEmail": "shopper_1791122526163@example.com",
+    "userPhone": "9876543210",
+    "address": "123 Fashion Street, Avenue 4",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "pincode": "600001",
+    "landmark": "Near Central Plaza",
+    "altPhone": "9123456780",
+    "items": [
+      {
+        "productId": "1066f98076458eca1de4dab5",
+        "name": "E2E Full Stack Oversized Tee - Updated",
+        "price": 1399,
+        "size": "L",
+        "qty": 2,
+        "image": ""
+      }
+    ],
+    "total": 2798,
+    "payment": "COD",
+    "status": "Processing",
+    "notes": "Deliver afternoon please",
+    "createdAt": "2026-10-04T14:02:07.254Z"
+  },
+  {
+    "_id": "12cb349757964a4589068aeb",
+    "orderId": "NSK22591392",
+    "user": "9b9263da291f33d3f23a91c8",
+    "userName": "Shopper Test",
+    "userEmail": "shopper_1791122590390@example.com",
+    "userPhone": "9876543210",
+    "address": "123 Fashion Street, Avenue 4",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "pincode": "600001",
+    "landmark": "Near Central Plaza",
+    "altPhone": "9123456780",
+    "items": [
+      {
+        "productId": "8ea2b68d1b183af176a68feb",
+        "name": "E2E Full Stack Oversized Tee - Updated",
+        "price": 1399,
+        "size": "L",
+        "qty": 2,
+        "image": ""
+      }
+    ],
+    "total": 2798,
+    "payment": "COD",
+    "status": "Processing",
+    "notes": "Deliver afternoon please",
+    "createdAt": "2026-10-04T14:03:11.392Z"
+  }
+]
