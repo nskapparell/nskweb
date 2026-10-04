@@ -1078,6 +1078,9 @@ app.use((req, res) => {
   if (req.path.startsWith('/api/')) {
     return res.status(404).json({ error: `API route ${req.method} ${req.path} not found` });
   }
+  if (process.env.VERCEL) {
+    return res.status(404).json({ error: 'Endpoint not found' });
+  }
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
