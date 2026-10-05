@@ -5,16 +5,23 @@
 
 'use strict';
 
-require('dotenv').config();
+const path       = require('path');
+const fs         = require('fs');
+
+// Always load .env from project directory regardless of current working directory
+require('dotenv').config({ path: path.join(__dirname, '.env') });
+
 const express    = require('express');
 const mongoose   = require('mongoose');
 const nodemailer = require('nodemailer');
 const bcrypt     = require('bcryptjs');
 const jwt        = require('jsonwebtoken');
 const cors       = require('cors');
-const path       = require('path');
 const multer     = require('multer');
-const fs         = require('fs');
+
+// Robust fallback configuration
+const JWT_SECRET  = process.env.JWT_SECRET || 'NSK_APPAREL_SUPER_SECRET_JWT_KEY_2024';
+const ADMIN_EMAIL = (process.env.ADMIN_EMAIL || 'apparelnsk@gmail.com').trim().toLowerCase();
 
 const app  = express();
 const PORT = process.env.PORT || 3000;
@@ -333,7 +340,7 @@ function authMiddleware(req, res, next) {
   const token = req.headers.authorization?.split(' ')[1];
   if (!token) return res.status(401).json({ error: 'No token provided' });
   try {
-    req.user = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = jwt.verify(token, JWT_SECRET);
     next();
   } catch {
     return res.status(401).json({ error: 'Invalid or expired token' });
@@ -344,7 +351,7 @@ function adminMiddleware(req, res, next) {
   const token = req.headers.authorization?.split(' ')[1];
   if (!token) return res.status(401).json({ error: 'Admin access required' });
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, JWT_SECRET);
     if (!decoded.isAdmin) return res.status(403).json({ error: 'Forbidden: Admins only' });
     req.user = decoded;
     next();
@@ -502,7 +509,7 @@ app.post('/api/auth/register', async (req, res) => {
     }
 
     // Block admin email from registering as regular user
-    if (emailCheck.cleanEmail === process.env.ADMIN_EMAIL.toLowerCase()) {
+    if (emailCheck.cleanEmail === ADMIN_EMAIL) {
       return res.status(400).json({ error: 'This email is reserved for administration' });
     }
 
@@ -519,7 +526,7 @@ app.post('/api/auth/register', async (req, res) => {
 
     const token = jwt.sign(
       { id: user._id, name: user.name, email: user.email, isAdmin: false },
-      process.env.JWT_SECRET,
+      JWT_SECRET,
       { expiresIn: '7d' }
     );
     res.status(201).json({
@@ -528,7 +535,7 @@ app.post('/api/auth/register', async (req, res) => {
     });
   } catch (err) {
     console.error('Register error:', err);
-    res.status(500).json({ error: 'Registration failed. Please try again.' });
+    res.status(500).json({ error: err.message || 'Registration failed. Please try again.' });
   }
 });
 
@@ -542,8 +549,7 @@ app.post('/api/auth/login', async (req, res) => {
     if (!emailCheck.valid) return res.status(400).json({ error: emailCheck.error });
 
     // ── Check if logging in as Admin directly ────────────────
-    const adminEmail = (process.env.ADMIN_EMAIL || 'apparelnsk@gmail.com').trim().toLowerCase();
-    if (emailCheck.cleanEmail === adminEmail) {
+    if (emailCheck.cleanEmail === ADMIN_EMAIL) {
       const envPass   = String(process.env.ADMIN_PASSWORD || '').trim();
       const inputPass = String(password).trim();
 
@@ -556,8 +562,8 @@ app.post('/api/auth/login', async (req, res) => {
       }
 
       const token = jwt.sign(
-        { id: 'admin_root', email: process.env.ADMIN_EMAIL, isAdmin: true, name: 'NSK Admin' },
-        process.env.JWT_SECRET,
+        { id: 'admin_root', email: ADMIN_EMAIL, isAdmin: true, name: 'NSK Admin' },
+        JWT_SECRET,
         { expiresIn: '7d' }
       );
 
@@ -567,7 +573,7 @@ app.post('/api/auth/login', async (req, res) => {
         user: {
           id: 'admin_root',
           name: 'NSK Admin',
-          email: process.env.ADMIN_EMAIL,
+          email: ADMIN_EMAIL,
           phone: '9876543210',
           isAdmin: true,
         },
@@ -584,13 +590,13 @@ app.post('/api/auth/login', async (req, res) => {
 
     const token = jwt.sign(
       { id: user._id, name: user.name, email: user.email, isAdmin: false },
-      process.env.JWT_SECRET,
+      JWT_SECRET,
       { expiresIn: '7d' }
     );
     res.json({ token, isAdmin: false, user: { id: user._id, name: user.name, email: user.email, phone: user.phone, isAdmin: false } });
   } catch (err) {
     console.error('Login error:', err);
-    res.status(500).json({ error: 'Login failed. Please try again.' });
+    res.status(500).json({ error: err.message || 'Login failed. Please try again.' });
   }
 });
 
@@ -656,14 +662,14 @@ app.post('/api/admin/login', async (req, res) => {
       return res.status(401).json({ error: 'Incorrect admin password' });
 
     const token = jwt.sign(
-      { email: process.env.ADMIN_EMAIL, isAdmin: true, name: 'Admin' },
-      process.env.JWT_SECRET,
+      { email: ADMIN_EMAIL, isAdmin: true, name: 'Admin' },
+      JWT_SECRET,
       { expiresIn: '12h' }
     );
-    res.json({ token, admin: { email: process.env.ADMIN_EMAIL, name: 'NSK Admin' } });
+    res.json({ token, admin: { email: ADMIN_EMAIL, name: 'NSK Admin' } });
   } catch (err) {
     console.error('Admin login error:', err);
-    res.status(500).json({ error: 'Admin login failed' });
+    res.status(500).json({ error: err.message || 'Admin login failed' });
   }
 });
 
